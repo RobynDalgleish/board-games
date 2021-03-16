@@ -1,17 +1,18 @@
 package com.robyndalgleish.core;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Value;
 
-@Getter
-@Setter
+@Value
 public class Player {
 
-    private String username;
-    private Boolean winner;
+    String username;
 
+    /**
+     * Construct a Player with a given username
+     *
+     * @param username the username to use for the player
+     */
     public Player(String username) {
         this.username = username;
-        this.winner = false;
     }
 }

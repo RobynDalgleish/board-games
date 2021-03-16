@@ -1,4 +1,4 @@
-package com.robyndalgleish;
+package com.robyndalgleish.core;
 
 import com.robyndalgleish.core.Die;
 import org.junit.jupiter.api.DisplayName;
@@ -30,7 +30,7 @@ class DieTest {
         assertThat(Die.ofNumberOfSides(3)).isNotNull();
     }
 
-    //If my die does not roll every side in 1 seconds, I probably have a problem in my code.
+    // If my die does not roll every side in 1 seconds, I probably have a problem in my code.
     @Timeout(1)
     @Test
     @DisplayName("Rolls every number on chosen die")
@@ -40,8 +40,8 @@ class DieTest {
         Set<Integer> sidesRolled = new HashSet<>();
 
         while(!sidesRolled.equals(sidesToRoll)){
-            var numberRolled = die.roll();
-            System.out.println(numberRolled);
+            die.roll();
+            var numberRolled = die.getCurrentRoll();
             sidesRolled.add(numberRolled);
         }
     }
